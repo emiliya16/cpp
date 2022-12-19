@@ -1,29 +1,57 @@
-#include <stdio.h>
-
-#include "Scheme.hpp"
-#include "Rectangle.hpp"
-#include "Circle.hpp"
-
-
-int main() {
-    Scheme scheme(10);
-
-    scheme.push_back_figure(new Rectangle(1, 5, 5, 10, 10));
-    scheme.push_back_figure(new Circle(2, 3, 3, 3, "very nice circle"));
-
-    scheme.print_all_figures();
-
-    Figure* found = scheme.is_inside_figure(5, 5);
-    if (found != nullptr) {
-        found->print();
-    } else {
-        printf("not found\n");
+#include <iotream>
+#include <fstream>
+#include <graphics.h>
+#include <cmath>
+#include <ctime>
+#include <string.h>
+using namespace std;
+int main()
+{
+    int zoom_rectangle(int a, int b, int n)
+    {
+    	return a * n, b * n;
     }
+    int zoom_circle(int r, int n)
+    {
+    	return r * n;
+    }
+    class Students {
+    ofstream sircle, digure, rectangle, scheme;
+    sircle.open("Circle.hpp");
+    digure.open("Figure.hpp");
+    rectangle.open("Rectangle.hpp");
+    scheme.open("Scheme.hpp");
+    
+    n = 2;
+    circle_id >> Sircle; 
+    circle_x >> sircle;
+    circle_y >> sircle;
+    r >> sircle;
+    sircle_s >> sircle;
+   
+    rectangle_id >> rectangle;
+    rectangle_x >> rectangle;
+    rectangle_y >> rectangle;
+    a >> rectangle;
+    b >> rectangle;
+    rectangle_s >> rectangle;
+    
+    a, b = zoom_rectangle(a, b, n);
+    r = zoom_sircle(r, n);
+    
+    setcolor (RGB(255,100,100));
+    rectangle(rectangle_x - a/2, rectangle_y - b/2, rectangle_x + a/2, rectangle_y + b/2);
+    circle(circle_x, cercle_y, r);
+    outtextxy(rectangle_x, rectangle_y, rectangle_s);
+    outtextxy(circle_x, circle_y, circle_s);
 
-    scheme.zoom_figure(1, 2);
-    scheme.print_all_figures();
-    scheme.remove_figure(1);
-    scheme.print_all_figures();
-
+    sircle.close();
+    digure.close();
+    rectangle.close();
+    scheme.close();
+    system("pause");
+};
+    printf(circle_id, circle_x, circle_y, circle_r, sircle_s)
+    printf(rectangle_id, rectangle_x, rectangle_y, )
     return 0;
 }

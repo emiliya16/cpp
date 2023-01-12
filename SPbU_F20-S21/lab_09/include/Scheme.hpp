@@ -1,22 +1,26 @@
-#pragma once
+#ifndef SCHEME_HPP
+#define SCHEME_HPP
 
 #include "Figure.hpp"
+#include "Circle.hpp"
+#include "Rectangle.hpp"
 
-class Scheme {
-public:
-    Scheme(int capacity); 
-    ~Scheme();
-
-    void push_back_figure(Figure* fg);
-    void remove_figure(int id); // элементы смещаются влево
-
-    void print_all_figures();
-    void zoom_figure(int id, int factor);
-    Figure* is_inside_figure(int x, int y); // если внутри нескольких фигур, то возвращается любая из них
-    void move(int id, int new_x, int new_y);
-
+#include <vector>
+ 
+class Scheme
+{
 private:
-    // ...
-
-    Figure** figures_; // размер массива задается в конструкторе и больше не растет
+    std::vector<Figure*> m_figures;
+ 
+public:
+    Scheme();
+    ~Scheme();
+        
+    void add_circle(int _x, int _y, std::string _label);
+    void add_rect(int _x, int _y);
+    
+    void print_figures();
+    void move_figure(int _id, int _x, int _y);
 };
+ 
+#endif
